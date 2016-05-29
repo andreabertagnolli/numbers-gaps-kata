@@ -86,4 +86,12 @@ public class NumbersTest {
         assertThat(numbers.gaps()).isEmpty();
     }
 
+    @Test
+    public void no_gaps_when_adding_then_removing_1() throws Exception {
+        numbers.add(1);
+        numbers.remove(1);
+
+        assertThat(numbers.gaps()).isEmpty();
+    }
+
 }

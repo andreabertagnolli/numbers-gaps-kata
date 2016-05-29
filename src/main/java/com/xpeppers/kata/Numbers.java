@@ -63,4 +63,8 @@ public class Numbers {
         numbers.add(number);
     }
 
+    public void remove(int number) {
+        numbers.remove(number);
+    }
+
 }
