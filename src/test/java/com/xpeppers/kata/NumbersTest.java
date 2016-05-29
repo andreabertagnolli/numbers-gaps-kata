@@ -50,4 +50,13 @@ public class NumbersTest {
         assertThat(numbers.gaps()).isEqualTo(new String[] { "2-3" });
     }
 
+    @Test
+    public void gaps_3_3_for_set_with_numbers_4_1_and_2() throws Exception {
+        numbers.add(4);
+        numbers.add(1);
+        numbers.add(2);
+
+        assertThat(numbers.gaps()).isEqualTo(new String[] { "3-3" });
+    }
+
 }
