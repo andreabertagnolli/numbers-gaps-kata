@@ -2,15 +2,18 @@
 
 Write a program that, given a set of numbers, returns the gaps between them.
 A gap should be represented as first missing number and the last one separated by a dash.
-Example: ** "2-3" **
+
+Example:
+**"2-3"**
 
 The user should be able to add and remove numbers and recalculate the gaps accordingly.
 
 That means you have to implement two methods:
- * insert(number)
- * remove(number)  
 
-For example, after inserting numbers 2, 5, 7 the system should return **[ "1-1" , "3-4" , "6-6" ]**  
+ * insert(number)
+ * remove(number)
+
+For example, after inserting numbers 2, 5, 7 the system should return **[ "1-1" , "3-4" , "6-6" ]**
 Then, after removing number 5 the system should return **[ "1-1" , "3-6" ]**
 
 Both methods accept one number and return an array of 'gaps' represented as strings, as shown above.
