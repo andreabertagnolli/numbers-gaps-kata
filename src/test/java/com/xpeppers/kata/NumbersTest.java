@@ -1,7 +1,8 @@
 package com.xpeppers.kata;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class NumbersTest {
@@ -18,6 +19,14 @@ public class NumbersTest {
         numbers.add(1);
 
         assertThat(numbers.gaps()).isEmpty();
+    }
+
+    @Test
+    public void gaps_1_1_for_a_set_with_just_number_2() throws Exception {
+        Numbers numbers = new Numbers();
+        numbers.add(2);
+
+        assertEquals("1-1", numbers.gaps()[0]);
     }
 
 }
