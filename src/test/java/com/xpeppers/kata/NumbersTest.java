@@ -77,4 +77,13 @@ public class NumbersTest {
         assertThat(numbers.gaps()).isEqualTo(new String[] { "2-3", "5-6" });
     }
 
+    @Test
+    public void no_gaps_for_set_with_numbers_1_3_and_2() throws Exception {
+        numbers.add(1);
+        numbers.add(3);
+        numbers.add(2);
+
+        assertThat(numbers.gaps()).isEmpty();
+    }
+
 }
