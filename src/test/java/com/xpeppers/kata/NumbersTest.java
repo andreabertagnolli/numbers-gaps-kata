@@ -1,7 +1,6 @@
 package com.xpeppers.kata;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -26,7 +25,7 @@ public class NumbersTest {
         Numbers numbers = new Numbers();
         numbers.add(2);
 
-        assertEquals("1-1", numbers.gaps()[0]);
+        assertThat(numbers.gaps()).isEqualTo(new String[] { "1-1" });
     }
 
 }
