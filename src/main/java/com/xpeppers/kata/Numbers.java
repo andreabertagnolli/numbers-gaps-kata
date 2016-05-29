@@ -6,4 +6,7 @@ public class Numbers {
         return new String[0];
     }
 
+    public void add(int number) {
+    }
+
 }
