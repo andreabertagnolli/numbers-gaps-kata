@@ -16,9 +16,6 @@ public class Numbers {
 
     public String[] gaps() {
         Integer[] opposites = oppositeOf(numbers);
-        if (opposites.length == 1) {
-            return new String[] { rangeWith(opposites[0], opposites[0]) };
-        }
 
         List<String> gaps = new ArrayList<String>();
         for (int i = 0; i < opposites.length; i++) {
@@ -36,6 +33,14 @@ public class Numbers {
         }
 
         return gaps.toArray(new String[0]);
+    }
+
+    public void add(int number) {
+        numbers.add(number);
+    }
+
+    public void remove(int number) {
+        numbers.remove(number);
     }
 
     private String rangeWith(Integer lowerBound, Integer upperBound) {
@@ -57,14 +62,6 @@ public class Numbers {
 
     private Optional<Integer> maxValueOf(Set<Integer> collection) {
         return collection.stream().max(Integer::compare);
-    }
-
-    public void add(int number) {
-        numbers.add(number);
-    }
-
-    public void remove(int number) {
-        numbers.remove(number);
     }
 
 }
