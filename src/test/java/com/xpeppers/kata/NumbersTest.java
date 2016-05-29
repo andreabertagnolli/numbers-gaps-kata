@@ -68,4 +68,13 @@ public class NumbersTest {
         assertThat(numbers.gaps()).isEqualTo(new String[] { "2-2" });
     }
 
+    @Test
+    public void gaps_2_3_and_5_6_for_set_with_numbers_1_7_and_4() throws Exception {
+        numbers.add(1);
+        numbers.add(7);
+        numbers.add(4);
+
+        assertThat(numbers.gaps()).isEqualTo(new String[] { "2-3", "5-6" });
+    }
+
 }

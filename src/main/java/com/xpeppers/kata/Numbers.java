@@ -17,20 +17,29 @@ public class Numbers {
     public String[] gaps() {
         Integer[] opposites = oppositeOf(numbers);
         if (opposites.length == 1) {
-            return new String[] { opposites[0] + "-" + opposites[0] };
+            return new String[] { rangeWith(opposites[0], opposites[0]) };
         }
 
         List<String> gaps = new ArrayList<String>();
-        for (int i = 0, j = 1; j < opposites.length; i++, j++) {
+        for (int i = 0; i < opposites.length; i++) {
             Integer lowerBound = opposites[i];
             Integer upperBound = opposites[i];
-            if (lowerBound + 1 == opposites[j]) {
-                upperBound = opposites[j];
+            int upperBoundIndex = i;
+            for (int j = i + 1; j < opposites.length; j++) {
+                if (lowerBound + 1 == opposites[j]) {
+                    upperBoundIndex = j;
+                    upperBound = opposites[j];
+                }
             }
-            gaps.add(lowerBound + "-" + upperBound);
+            i = upperBoundIndex;
+            gaps.add(rangeWith(lowerBound, upperBound));
         }
 
         return gaps.toArray(new String[0]);
+    }
+
+    private String rangeWith(Integer lowerBound, Integer upperBound) {
+        return lowerBound + "-" + upperBound;
     }
 
     private Integer[] oppositeOf(Set<Integer> numbers) {
