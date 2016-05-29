@@ -28,4 +28,13 @@ public class NumbersTest {
         assertThat(numbers.gaps()).isEqualTo(new String[] { "1-1" });
     }
 
+    @Test
+    public void no_gaps_for_a_set_with_numbers_1_and_2() throws Exception {
+        Numbers numbers = new Numbers();
+        numbers.add(1);
+        numbers.add(2);
+
+        assertThat(numbers.gaps()).isEmpty();
+    }
+
 }
