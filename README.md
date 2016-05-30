@@ -1,7 +1,7 @@
 # Numbers Gaps Kata
 
 Write a program that, given a set of numbers, returns the gaps between them.
-A gap should be represented as first missing number and the last one separated by a dash.
+A gap should be represented as the first missing number and the last one separated by a dash.
 
 Example:
 **"2-3"**
