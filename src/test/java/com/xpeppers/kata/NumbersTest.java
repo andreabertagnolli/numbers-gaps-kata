@@ -94,4 +94,22 @@ public class NumbersTest {
         assertThat(numbers.gaps()).isEmpty();
     }
 
+    @Test
+    public void no_gaps_when_adding_then_removing_5() throws Exception {
+        numbers.add(5);
+        numbers.remove(5);
+
+        assertThat(numbers.gaps()).isEmpty();
+    }
+
+    @Test
+    public void gaps_1_4_and_6_6_when_adding_5_6_7_then_removing_6() throws Exception {
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.remove(6);
+
+        assertThat(numbers.gaps()).isEqualTo(new String[] { "1-4", "6-6" });
+    }
+
 }

@@ -23,7 +23,7 @@ public class Numbers {
             Integer upperBound = opposites[i];
             int upperBoundIndex = i;
             for (int j = i + 1; j < opposites.length; j++) {
-                if (lowerBound + 1 == opposites[j]) {
+                if (lowerBound + j - i == opposites[j]) {
                     upperBoundIndex = j;
                     upperBound = opposites[j];
                 }
