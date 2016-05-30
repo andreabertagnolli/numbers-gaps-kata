@@ -112,4 +112,43 @@ public class NumbersTest {
         assertThat(numbers.gaps()).isEqualTo(new String[] { "1-4", "6-6" });
     }
 
+    @Test
+    public void gaps_1_4_when_adding_5_6_7_then_removing_5() throws Exception {
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.remove(5);
+
+        assertThat(numbers.gaps()).isEqualTo(new String[] { "1-5" });
+    }
+
+    @Test
+    public void gaps_2_4_when_adding_1_2_5_then_removing_2() throws Exception {
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(5);
+        numbers.remove(2);
+
+        assertThat(numbers.gaps()).isEqualTo(new String[] { "2-4" });
+    }
+
+    @Test
+    public void gaps_2_4_when_adding_1_3_5_then_removing_3() throws Exception {
+        numbers.add(1);
+        numbers.add(3);
+        numbers.add(5);
+        numbers.remove(3);
+
+        assertThat(numbers.gaps()).isEqualTo(new String[] { "2-4" });
+    }
+
+    @Test
+    public void no_gaps_when_adding_1_5_then_removing_5() throws Exception {
+        numbers.add(1);
+        numbers.add(5);
+        numbers.remove(5);
+
+        assertThat(numbers.gaps()).isEmpty();
+    }
+
 }
